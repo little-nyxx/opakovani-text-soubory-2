@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         EvidenceZakazniku evidenceZakazniku = new EvidenceZakazniku();
         evidenceZakazniku.prectiSoubor("zakaznici.txt", ";");
-        System.out.println(evidenceZakazniku.nactiIDIvan());
+        //System.out.println(evidenceZakazniku.nactiIDIvan());
+        //evidenceZakazniku.vypisIvanu();
+       evidenceZakazniku.vypisIvanu();
     }
 }
