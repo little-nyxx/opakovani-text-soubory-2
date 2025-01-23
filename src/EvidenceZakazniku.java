@@ -3,7 +3,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class EvidenceZakazniku {
@@ -47,17 +46,15 @@ public class EvidenceZakazniku {
         return id;
    }*/
   List<Zakaznik> ivana = new ArrayList<>();
-    public void vypisIvanu() {
-        //List<Zakaznik> ivana = new ArrayList<>();
+    public List<Zakaznik> najdiIvanu() {
+        List<Zakaznik> ivana = new ArrayList<>();
         for (Zakaznik zakaznik : evidence) {
 
             if (zakaznik.getJmeno().equals("Ivana") && zakaznik.getId() < 50) {
                 ivana.add(zakaznik);
             }
         }
+        return ivana;
 
-        for (Zakaznik zakaznik : ivana) {
-            System.out.println(zakaznik.getJmeno() +" "+ zakaznik.getPrijmeni());
-        }
     }
 }

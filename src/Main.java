@@ -5,7 +5,10 @@ public class Main {
         EvidenceZakazniku evidenceZakazniku = new EvidenceZakazniku();
         evidenceZakazniku.prectiSoubor("zakaznici.txt", ";");
         //System.out.println(evidenceZakazniku.nactiIDIvan());
-        //evidenceZakazniku.vypisIvanu();
-       evidenceZakazniku.vypisIvanu();
+        //evidenceZakazniku.najdiIvanu();
+       evidenceZakazniku.najdiIvanu();
+       for (Zakaznik zakaznik : evidenceZakazniku.ivana) {
+           System.out.println(zakaznik.getJmeno()+ " "+ zakaznik.getPrijmeni());
+       }
     }
 }
