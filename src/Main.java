@@ -3,12 +3,12 @@
 public class Main {
     public static void main(String[] args) {
         EvidenceZakazniku evidenceZakazniku = new EvidenceZakazniku();
-        evidenceZakazniku.prectiSoubor("zakaznici.txt", ";");
+        evidenceZakazniku.nactiSoubor("zakaznici.txt", " ", ";");
         //System.out.println(evidenceZakazniku.nactiIDIvan());
         //evidenceZakazniku.najdiIvanu();
        evidenceZakazniku.najdiIvanu();
-       for (Zakaznik zakaznik : evidenceZakazniku.ivana) {
-           System.out.println(zakaznik.getJmeno()+ " "+ zakaznik.getPrijmeni());
+       for (Zakaznik zakaznik : evidenceZakazniku.najdiIvanu()) {
+           System.out.println(zakaznik.getId()+" " +zakaznik.getJmeno()+ " "+ zakaznik.getPrijmeni());
        }
     }
 }

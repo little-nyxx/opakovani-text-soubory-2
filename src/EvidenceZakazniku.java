@@ -16,7 +16,7 @@ public class EvidenceZakazniku {
         evidence.add(zakaznik);
     }
 
-    public void prectiSoubor(String nazevSouboru, String oddelovac) throws ZakaznikExeption{
+   /* public void prectiSoubor(String nazevSouboru, String oddelovac) throws ZakaznikExeption{
         try(Scanner scanner = new Scanner(new BufferedReader(new FileReader("resources/" + nazevSouboru)))) {
             while (scanner.hasNextLine()) {
                 String radek = scanner.nextLine();
@@ -24,6 +24,25 @@ public class EvidenceZakazniku {
             }
         } catch (FileNotFoundException ex) {
             throw new ZakaznikExeption("Soubor: "+ nazevSouboru + " nebyl nalezen!");
+        }
+    }**/
+
+    public void nactiSoubor(String nazevSouboru, String oddelovac, String oddelovac2) throws ZakaznikExeption {
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader("resources/" + nazevSouboru)))) {
+            while (scanner.hasNextLine()) {
+                String radek = scanner.nextLine();
+                oddelRadek(radek, oddelovac, oddelovac2);
+            }
+        } catch (FileNotFoundException ex) {
+            throw new ZakaznikExeption("Soubor: "+nazevSouboru+" nebyl nalezen!");
+        }
+    }
+
+    private void oddelRadek(String radek, String oddelovac, String oddelovac2) throws ZakaznikExeption {
+        String [] polozky = radek.split(oddelovac2);
+        for (int i = 0; i < polozky.length; i++) {
+            String zakaznik = polozky[i];
+            pridejZakaznika(parseZakaznik(zakaznik, oddelovac));
         }
     }
 
